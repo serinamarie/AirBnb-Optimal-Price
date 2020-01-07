@@ -1,4 +1,5 @@
 from flask import Flask, request
+import json
 
 def create_app():
     app = Flask(__name__)
@@ -8,15 +9,15 @@ def create_app():
         return 'airbnb predictive project'
 
     @app.route('/predict', methods=['POST'])
-    def predict(message=""):
+    def predict():
         try:
             # find authorization header
             content = request.get_json(force=True)
-            message = f'POST response recieved: {content}'
+            content['predicted_price'] = 99
             # prediction = get_predicted_price(content)
         except Exception as identifier:
-            message = f'error: {identifier}'
-        return message
+            content = json.load('{"error: unidentified"}')
+        return content
     
     return app
 
