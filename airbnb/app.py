@@ -1,5 +1,4 @@
-from flask import Flask, request
-import json
+from flask import Flask, request, jsonify
 
 def create_app():
     app = Flask(__name__)
@@ -18,7 +17,7 @@ def create_app():
         except Exception as identifier:
             content = {}
             content['error'] = identifier
-        return content
+        return jsonify(content)
     
     return app
 
