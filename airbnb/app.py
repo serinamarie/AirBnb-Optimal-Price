@@ -16,7 +16,8 @@ def create_app():
             content['predicted_price'] = 99
             # prediction = get_predicted_price(content)
         except Exception as identifier:
-            content = json.load('{"error: unidentified"}')
+            content = {}
+            content['error'] = identifier
         return content
     
     return app
