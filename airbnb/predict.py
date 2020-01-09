@@ -1,8 +1,7 @@
 import pickle
 import pandas as pd
 import numpy as np
-# import sys
-# sys.path.append(r'path/to/python module file')
+from sklearn import preprocessing
 
 def add_prediction(listing):
     """
@@ -25,9 +24,11 @@ def add_prediction(listing):
     columns = ["summary","neighbourhood_cleansed","property_type","room_type","accommodates","bathrooms","cleaning_fee","minimum_nights","instant_bookable","kitchen","smoke_detector","self_check_in","hot_water"]
     data = [[X_train[y] for y in columns]]
 
+    enc = preprocessing.LabelEncoder()
     df = pd.DataFrame(data,columns=columns)
-    # X_test = df.iloc[0].values
+    df_2 = df.apply(enc.fit_transform)
+    X_test = df_2.iloc[0].values
 
-    y_pred = pickle_model.predict(df)
+    # y_pred = pickle_model.predict(df)
 
-    return str(y_pred)
+    return str(X_test)
