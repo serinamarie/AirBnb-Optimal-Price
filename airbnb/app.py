@@ -16,8 +16,8 @@ def create_app():
             # content['predicted_price'] = 99
             content = add_prediction(listing)
         except Exception as identifier:
-            content = {}
-            content['error'] = identifier
+            # content = {}
+            content = identifier
         return jsonify(content)
     
     return app
