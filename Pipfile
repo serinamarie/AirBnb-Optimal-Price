@@ -11,6 +11,7 @@ python-decouple = "*"
 gunicorn = "*"
 pandas = "*"
 xgboost = "*"
+pickle = "*"
 
 [requires]
 python_version = "3.7"

@@ -11,8 +11,8 @@ def add_prediction(listing):
     # with open(pkl_filename, 'rb') as file:
     #     pickle_model = pickle.load(file)
 
-    pickle_in = open("ABB.pkl", 'rb')
-    pickle_model = pickle.load(pickle_in)
+    # pickle_in = open("ABB.pkl", 'rb')
+    # pickle_model = pickle.load(pickle_in)
 
     # listing['price'] = 99
     X_train = listing.copy()
@@ -28,5 +28,3 @@ def add_prediction(listing):
     # y_pred = pickle_model.predict(X_test)
 
     return str(X_test)
-
-
