@@ -23,11 +23,11 @@ def add_prediction(listing):
     del X_train["title"]
 
     columns = ["summary","neighbourhood_cleansed","property_type","room_type","accommodates","bathrooms","cleaning_fee","minimum_nights","instant_bookable","kitchen","smoke_detector","self_check_in","hot_water"]
-    data = np.array([X_train[y] for y in columns], ndmin=2)
+    data = [[X_train[y] for y in columns]]
 
-    # df = pd.DataFrame(data,columns=columns)
+    df = pd.DataFrame(data,columns=columns)
     # X_test = df.iloc[0].values
 
-    y_pred = pickle_model.predict(data)
+    y_pred = pickle_model.predict(df)
 
-    return str(X_test)
+    return str(y_pred)
