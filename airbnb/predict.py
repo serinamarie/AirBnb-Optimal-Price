@@ -1,5 +1,12 @@
-# insert pickled model here
-# receive response data from FE here (listing features)
-# predict price with pickled model
-# combine all into one json/dict object
-# return this to app
+import pickle
+
+def add_prediction(listing):
+    """
+
+    """
+    loaded_model = pickle.load(open(ABB.pkl, 'rb'))
+    listing['price'] = 99
+
+    return listing
+
+
