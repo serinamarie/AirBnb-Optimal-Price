@@ -14,11 +14,11 @@ def create_app():
             # find authorization header
             listing = request.get_json(force=True)
             # content['predicted_price'] = 99
-            content = add_prediction(listing)
+            content = jsonify(add_prediction(listing))
         except Exception as identifier:
             # content = {}
-            content = identifier
-        return jsonify(content)
+            content = str(identifier)
+        return content
     
     return app
 

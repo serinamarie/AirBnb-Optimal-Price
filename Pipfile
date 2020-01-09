@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 python-decouple = "*"
 gunicorn = "*"
 pandas = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.7"
