@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from .predict import add_prediction
 
 def create_app():
     app = Flask(__name__)
@@ -11,13 +12,13 @@ def create_app():
     def predict():
         try:
             # find authorization header
-            content = request.get_json(force=True)
-            content['predicted_price'] = 99
-            # prediction = get_predicted_price(content)
+            listing = request.get_json(force=True)
+            # content['predicted_price'] = 99
+            content = jsonify(add_prediction(listing))
         except Exception as identifier:
-            content = {}
-            content['error'] = identifier
-        return jsonify(content)
+            # content = {}
+            content = str(identifier)
+        return content
     
     return app
 

@@ -8,6 +8,12 @@ verify_ssl = true
 [packages]
 flask-sqlalchemy = "*"
 python-decouple = "*"
+gunicorn = "*"
+pandas = "*"
+xgboost = "*"
+pickle = "*"
+numpy = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.7"
