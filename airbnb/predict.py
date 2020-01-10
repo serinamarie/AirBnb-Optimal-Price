@@ -24,11 +24,13 @@ def add_prediction(listing):
     columns = ["summary","neighbourhood_cleansed","property_type","room_type","accommodates","bathrooms","cleaning_fee","minimum_nights","instant_bookable","kitchen","smoke_detector","self_check_in","hot_water"]
     data = [[X_train[y] for y in columns]]
 
-    enc = preprocessing.LabelEncoder()
-    df = pd.DataFrame(data,columns=columns)
-    df_2 = df.apply(enc.fit_transform)
-    X_test = df_2.iloc[0].values
+    # f_names = pickle_model.feature_names
+    # df = df[f_names]
 
-    # y_pred = pickle_model.predict(df)
+    df = pd.DataFrame(daCta,columns=columns)
+    df_2 = pd.get_dummies(df)
+    # X_test = df.iloc[0].values
 
-    return str(X_test)
+    y_pred = pickle_model.predict(df_2)
+
+    return str(y_pred)
