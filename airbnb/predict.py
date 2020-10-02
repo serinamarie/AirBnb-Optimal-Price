@@ -52,7 +52,7 @@ def add_prediction(listing):
     return str(listing)
 
 
-    # {
+# {
 # 	"photo": "https://picsum.photos/400/250?random=1578527625018",
 # 	"title": "Whatever Dude",
 # 	"summary": "This place is legiiiiiit",
@@ -70,7 +70,6 @@ def add_prediction(listing):
 # 	"hot_water": 0,
 # 	"accommodates":0,
 # 	"id": 1578527625018,
-# 	"room_type_Entire home/apt": 0,
-# 	"property_type_Hotel": 0,
-# 	"neighbourhood_cleansed_Mitaka Shi":0
+# 	"user_id": 101203042,
+# 	"local_host": 0
 # }

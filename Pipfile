@@ -11,9 +11,9 @@ python-decouple = "*"
 gunicorn = "*"
 pandas = "*"
 xgboost = "*"
-pickle = "*"
 numpy = "*"
 sklearn = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.7"
