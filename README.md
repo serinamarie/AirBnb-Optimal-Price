@@ -43,17 +43,30 @@ flask run
 
 ### POST /predict
 
-Accepts the following JSON object parameters:
+#### Request
 
-```
+```json
 {
-    beds: int
-    baths: int
-    season: int
-    has_wifi: int
-    allows_pets: int
-    predicted_price: int 
+	"host_response_rate": 100,
+	"neighbourhood_cleansed": "Sumida Ku",
+	"property_type": "Apartment",
+	"room_type": "Shared room",
+	"bathrooms": 1,
+	"cleaning_fee": 323,
+	"minimum_nights": 1,
+	"instant_bookable": 0,
+	"kitchen": 1,
+	"smoke_detector": 0,
+	"self_check_in": 1,
+	"hot_water": 0,
+	"accommodates":0,
+	"local_host": 0
 }
 ```
 
-Currently returns the same object. Working on predictive functionality.
+#### Response
+```json
+{
+    "predicted_price": 1211.3927
+}
+```
