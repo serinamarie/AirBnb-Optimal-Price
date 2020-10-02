@@ -15,12 +15,9 @@ def create_app():
     @app.route('/predict', methods=['POST'])
     def predict():
         try:
-            # find authorization header
             listing = request.get_json(force=True)
-            # content['predicted_price'] = 99
             content = jsonify(add_prediction(listing))
         except Exception as identifier:
-            # content = {}
             content = str(identifier)
         return content
 
