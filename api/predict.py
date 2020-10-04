@@ -37,21 +37,3 @@ def add_prediction(listing):
 
     listing['predicted_price'] = y_pred[0]
     return str(listing)
-
-# ONLY REQUEST WITH THE FOLLOWING:
-# {
-# 	"host_response_rate": 100,
-# 	"neighbourhood_cleansed": "Mitaka Shi",
-# 	"property_type": "Hotel",
-# 	"room_type": "Entire home/apt",
-# 	"bathrooms": 3,
-# 	"cleaning_fee": 33,
-# 	"minimum_nights": 1,
-# 	"instant_bookable": 0,
-# 	"kitchen": 1,
-# 	"smoke_detector": 0,
-# 	"self_check_in": 1,
-# 	"hot_water": 0,
-# 	"accommodates":0,
-# 	"local_host": 0
-# }
