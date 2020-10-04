@@ -2,21 +2,23 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn import preprocessing
+from pathlib import Path 
 
 # import sys
 # sys.path.append(r'path/to/python module file')
 
 def add_prediction(listing):
-    pkl_filename = "final_model.pkl"
-    with open(pkl_filename, 'rb') as file:
+    # pkl_filename = "final_model.pkl"
+    path_to_file = Path("./notebooks/final_model.pkl")
+    with open(path_to_file, 'rb') as file:
         pickle_model = pickle.load(file)
 
     X_train = listing.copy()
-    del X_train["id"]
-    del X_train["user_id"]
-    del X_train["photo"]
-    del X_train["title"]
-    del X_train["summary"]
+    # del X_train["id"]
+    # del X_train["user_id"]
+    # del X_train["photo"]
+    # del X_train["title"]
+    # del X_train["summary"]
 
     columns = ["host_response_rate","neighbourhood_cleansed","property_type","room_type","accommodates","bathrooms","cleaning_fee","minimum_nights","instant_bookable","kitchen","smoke_detector","self_check_in","hot_water","local_host"]
     data = [[X_train[y] for y in columns]]
