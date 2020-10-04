@@ -44,7 +44,6 @@ flask run
 ### POST /predict
 
 #### Request
-
 ```json
 {
 	"host_response_rate": 100,
@@ -65,8 +64,9 @@ flask run
 ```
 
 #### Response
+Predicted price is returned as **Yen**.
 ```json
 {
-    "predicted_price": 1211.3927
+    "predicted_price": 1211
 }
 ```

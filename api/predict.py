@@ -14,7 +14,7 @@ def find_price(listing):
     columns = ["host_response_rate", "neighbourhood_cleansed", "property_type", "room_type", "accommodates", "bathrooms",
                "cleaning_fee", "minimum_nights", "instant_bookable", "kitchen", "smoke_detector", "self_check_in", "hot_water", "local_host"]
 
-    data = [[features[y] for y in columns]]
+    data = [[features[col_name] for col_name in columns]]
     df = pd.DataFrame(data, columns=columns)
 
     replaced_room_type = {'Entire home/apt': 0,
