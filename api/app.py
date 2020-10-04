@@ -10,7 +10,7 @@ def create_app():
 
     @app.route('/')
     def root():
-        return 'airbnb predictive project'
+        return 'Tokyo Airbnb Apartment Price Appraisal Tool'
 
     @app.route('/predict', methods=['POST'])
     def predict():
