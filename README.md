@@ -20,7 +20,7 @@ git clone <url>
 Once cloned, create a `.env` file in the main directory and add the following variables:
 
 ```
-FLASK_APP=airbnb:APP 
+FLASK_APP=api:APP 
 FLASK_ENV=development
 ```
 
