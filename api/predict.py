@@ -7,7 +7,7 @@ from sklearn import preprocessing
 # sys.path.append(r'path/to/python module file')
 
 def add_prediction(listing):
-    pkl_filename = "fresh_pickles.pkl"
+    pkl_filename = "final_model.pkl"
     with open(pkl_filename, 'rb') as file:
         pickle_model = pickle.load(file)
 
