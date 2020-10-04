@@ -44,6 +44,23 @@ flask run
 ### POST /predict
 
 #### Request
+Cleaning fee is in **Yen**. Options currently available for **neighbourhood_cleansed** are:
+* Sumida Ku
+* Hino Shi
+* Chuo Ku
+
+For **property_type**:
+* Apartment
+* House
+* Hostel
+* Hotel
+
+For **room_type**:
+* Entire home/apt
+* Private room
+* Hotel room
+* Shared room
+
 ```json
 {
 	"host_response_rate": 100,
@@ -64,7 +81,8 @@ flask run
 ```
 
 #### Response
-Predicted price is returned as **Yen**.
+Predicted price is returned in **Yen**.
+
 ```json
 {
     "predicted_price": 1211

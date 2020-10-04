@@ -26,10 +26,10 @@ def find_price(listing):
     df['neighbourhood_cleansed'] = df['neighbourhood_cleansed'].map(
         replaced_neighbourhood_cleansed).fillna(3)
 
-    replaced_apartment_type = {'Apartment': 0,
+    replaced_property_type = {'Apartment': 0,
                                'House': 1, 'Hostel': 2, 'Hotel': 3}
     df['property_type'] = df['property_type'].map(
-        replaced_apartment_type).fillna(4)
+        replaced_property_type).fillna(4)
 
     y_pred = pickle_model.predict(df)
     y_pred = np.exp(y_pred)
