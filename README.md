@@ -1,4 +1,4 @@
-# AirBnB Optimal Price Team 1
+# AirBnB Optimal Price Team 1: Tokyo Price Appraisal API
 
 An API to predict daily AirBnB rates in Tokyo from property features.
 
