@@ -56,7 +56,8 @@ def find_price(listing):
     y_pred = np.exp(y_pred)
 
     # prediction = {'predicted_price': int(y_pred)}
-    listing['predicted_price'] = y_pred[0]
+    listing['predicted_price'] = round(y_pred[0])
+
     string_listing = json.dumps(listing, cls=NumpyEncoder)
     result = json.loads(string_listing)
     return result

@@ -90,6 +90,25 @@ Predicted price is returned in **Yen**.
 
 ```json
 {
-    "predicted_price": 1211
+  "accommodates": 0,
+  "bathrooms": 1,
+  "cleaning_fee": 323,
+  "host_response_rate": 100,
+  "hot_water": 0,
+  "id": 1578527625018,
+  "instant_bookable": 0,
+  "kitchen": 1,
+  "local_host": 0,
+  "minimum_nights": 1,
+  "neighbourhood_cleansed": "Sumida Ku",
+  "photo": "https://picsum.photos/400/250?random=1578527625018",
+  "predicted_price": 1211.392578125,
+  "property_type": "Apartment",
+  "room_type": "Shared room",
+  "self_check_in": 1,
+  "smoke_detector": 0,
+  "summary": "Thank you very much for staying. I hope your stay will be meaningful.",
+  "title": "Hotel KU, 2 guests , wifi",
+  "user_id": 101203042
 }
 ```
