@@ -102,7 +102,7 @@ Predicted price is returned in **Yen**.
   "minimum_nights": 1,
   "neighbourhood_cleansed": "Sumida Ku",
   "photo": "https://picsum.photos/400/250?random=1578527625018",
-  "predicted_price": 1211.392578125,
+  "predicted_price": 1211,
   "property_type": "Apartment",
   "room_type": "Shared room",
   "self_check_in": 1,
