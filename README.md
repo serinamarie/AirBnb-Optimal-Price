@@ -2,6 +2,8 @@
 
 An API to predict daily AirBnB rates in Tokyo from property features.
 
+Deployed to: https://airbnb-pricing.now.sh/
+
 ## Getting Started
 
 This section is dedicated to software developers that want to contribute to this API. You must have `pipenv` installed on your local machine to continue.
