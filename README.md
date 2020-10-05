@@ -63,6 +63,9 @@ For **room_type**:
 
 ```json
 {
+	"photo": "https://picsum.photos/400/250?random=1578527625018",
+	"title": "Hotel KU, 2 guests , wifi",
+	"summary": "Thank you very much for staying. I hope your stay will be meaningful.",
 	"host_response_rate": 100,
 	"neighbourhood_cleansed": "Sumida Ku",
 	"property_type": "Apartment",
@@ -76,6 +79,8 @@ For **room_type**:
 	"self_check_in": 1,
 	"hot_water": 0,
 	"accommodates":0,
+	"id": 1578527625018,
+	"user_id": 101203042,
 	"local_host": 0
 }
 ```
