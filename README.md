@@ -1,6 +1,8 @@
-# AirBnB Optimal Price Team 1
+# AirBnB Optimal Price Team 1: Tokyo Price Appraisal API
 
 An API to predict daily AirBnB rates in Tokyo from property features.
+
+Deployed to: https://airbnb-pricing.now.sh/
 
 ## Getting Started
 
@@ -20,7 +22,7 @@ git clone <url>
 Once cloned, create a `.env` file in the main directory and add the following variables:
 
 ```
-FLASK_APP=airbnb:APP 
+FLASK_APP=api:APP 
 FLASK_ENV=development
 ```
 
@@ -43,17 +45,72 @@ flask run
 
 ### POST /predict
 
-Accepts the following JSON object parameters:
+#### Request
+Cleaning fee is in **Yen**. Options currently available for **neighbourhood_cleansed** are:
+* Sumida Ku
+* Hino Shi
+* Chuo Ku
 
-```
+For **property_type**:
+* Apartment
+* House
+* Hostel
+* Hotel
+
+For **room_type**:
+* Entire home/apt
+* Private room
+* Hotel room
+* Shared room
+
+```json
 {
-    beds: int
-    baths: int
-    season: int
-    has_wifi: int
-    allows_pets: int
-    predicted_price: int 
+	"photo": "https://picsum.photos/400/250?random=1578527625018",
+	"title": "Hotel KU, 2 guests , wifi",
+	"summary": "Thank you very much for staying. I hope your stay will be meaningful.",
+	"host_response_rate": 100,
+	"neighbourhood_cleansed": "Sumida Ku",
+	"property_type": "Apartment",
+	"room_type": "Shared room",
+	"bathrooms": 1,
+	"cleaning_fee": 323,
+	"minimum_nights": 1,
+	"instant_bookable": 0,
+	"kitchen": 1,
+	"smoke_detector": 0,
+	"self_check_in": 1,
+	"hot_water": 0,
+	"accommodates":0,
+	"id": 1578527625018,
+	"user_id": 101203042,
+	"local_host": 0
 }
 ```
 
-Currently returns the same object. Working on predictive functionality.
+#### Response
+Predicted price is returned in **Yen**.
+
+```json
+{
+  "accommodates": 0,
+  "bathrooms": 1,
+  "cleaning_fee": 323,
+  "host_response_rate": 100,
+  "hot_water": 0,
+  "id": 1578527625018,
+  "instant_bookable": 0,
+  "kitchen": 1,
+  "local_host": 0,
+  "minimum_nights": 1,
+  "neighbourhood_cleansed": "Sumida Ku",
+  "photo": "https://picsum.photos/400/250?random=1578527625018",
+  "predicted_price": 1211,
+  "property_type": "Apartment",
+  "room_type": "Shared room",
+  "self_check_in": 1,
+  "smoke_detector": 0,
+  "summary": "Thank you very much for staying. I hope your stay will be meaningful.",
+  "title": "Hotel KU, 2 guests , wifi",
+  "user_id": 101203042
+}
+```
