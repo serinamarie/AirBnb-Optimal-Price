@@ -3,12 +3,16 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import json
+import xgboost as xgb
 
 
 def find_price(listing):
-    path_to_file = Path("./notebooks/final_model.pkl")
-    with open(path_to_file, 'rb') as file:
-        pickle_model = pickle.load(file)
+    path_to_file = Path("./notebooks/new.model")
+    # with open(path_to_file, 'rb') as file:
+    #     model = pickle.load(file)
+
+    model = xgb.Booster({'nthread':4})
+    model.load_model(path_to_file)
 
     features = listing.copy()
     columns = ["host_response_rate", "neighbourhood_cleansed", "property_type", "room_type", "accommodates", "bathrooms",
@@ -31,7 +35,7 @@ def find_price(listing):
     df['property_type'] = df['property_type'].map(
         replaced_property_type).fillna(4)
 
-    y_pred = pickle_model.predict(df)
+    y_pred = model.predict(xgb.DMatrix(df))
     y_pred = np.exp(y_pred)
     prediction = {'predicted_price': int(y_pred)}
 
