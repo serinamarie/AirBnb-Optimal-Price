@@ -6,6 +6,21 @@ import json
 import xgboost as xgb
 
 
+class NumpyEncoder(json.JSONEncoder):
+    """ Special json encoder for numpy types """
+    def default(self, obj):
+        if isinstance(obj, (np.int_, np.intc, np.intp, np.int8,
+            np.int16, np.int32, np.int64, np.uint8,
+            np.uint16, np.uint32, np.uint64)):
+            return int(obj)
+        elif isinstance(obj, (np.float_, np.float16, np.float32, 
+            np.float64)):
+            return float(obj)
+        elif isinstance(obj,(np.ndarray,)): #### This is the fix
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
+
+
 def find_price(listing):
     # path_to_file = Path("./notebooks/new.model")
     path_to_file = Path("./notebooks/final_model.pkl")
@@ -32,13 +47,16 @@ def find_price(listing):
         replaced_neighbourhood_cleansed).fillna(3)
 
     replaced_property_type = {'Apartment': 0,
-                               'House': 1, 'Hostel': 2, 'Hotel': 3}
+                              'House': 1, 'Hostel': 2, 'Hotel': 3}
     df['property_type'] = df['property_type'].map(
         replaced_property_type).fillna(4)
 
     # y_pred = model.predict(xgb.DMatrix(df))
     y_pred = model.predict(df)
     y_pred = np.exp(y_pred)
-    prediction = {'predicted_price': int(y_pred)}
 
-    return prediction
+    # prediction = {'predicted_price': int(y_pred)}
+    listing['predicted_price'] = y_pred[0]
+    string_listing = json.dumps(listing, cls=NumpyEncoder)
+    result = json.loads(string_listing)
+    return result
