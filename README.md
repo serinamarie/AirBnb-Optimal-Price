@@ -1,4 +1,4 @@
-# AirBnB Optimal Price Team 1: Tokyo Price Appraisal API
+# AirBnB Optimal Price Team 1: Appraisal API
 
 An API to predict daily AirBnB rates in Tokyo from property features.
 
@@ -50,12 +50,15 @@ Cleaning fee is in **Yen**. Options currently available for **neighbourhood_clea
 * Sumida Ku
 * Hino Shi
 * Chuo Ku
+* Other
 
 For **property_type**:
 * Apartment
 * House
 * Hostel
 * Hotel
+* Villa
+* Other
 
 For **room_type**:
 * Entire home/apt
