@@ -1,8 +1,8 @@
 # AirBnB Optimal Price Team 1: Appraisal API
 
-An API to predict daily AirBnB rates in Tokyo from property features.
+Flask API to predict daily Airbnb rates in Tokyo from property features.
 
-Deployed to: https://airbnb-pricing.now.sh/
+Deployed to: https://ds-unit4-bw-airbnb.herokuapp.com/
 
 ## Getting Started
 
